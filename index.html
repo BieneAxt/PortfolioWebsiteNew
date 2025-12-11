@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">LF</div>
+            <div class="nav-container">
+                <div class="nav-item">
+                    <a href="#hero" class="nav-btn nav-link" data-i18n="nav.home">Home</a>
+                </div>
+                <div class="nav-item">
+                    <a href="#projects" class="nav-btn nav-link" data-i18n="nav.projects">Projects</a>
+                </div>
+                <div class="nav-item">
+                    <a href="#contact" class="nav-btn nav-link" data-i18n="nav.contact">Contact</a>
+                </div>
+            </div>
+            <div class="toggle-group">
+                <button class="lang-toggle" id="langToggle">EN</button>
+                <button class="theme-toggle" id="themeToggle">
+                    <img class="icon-dark" src="images/index/moon-icon.svg" alt="Dark Mode">
+                    <img class="icon-light" src="images/index/sun-icon.svg" alt="Light Mode">
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <h1>Leonidas Flaounas</h1>
+            <p data-i18n="hero.description">Willkommen auf meinem Portfolio! Hier präsentiere ich meine Coding-Projekte
+                aus Leidenschaft und Schule.
+            </p>
+            <a href="#projects" class="cta-button" data-i18n="hero.button">Projekte Ansehen</a>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <p class="section-title" data-i18n="projects.title">Projekte</p>
+
+        <div class="projects-category">
+            <h3 class="category-title" data-i18n="projects.school">Schulprojekte</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img class="project-image" src="https://via.placeholder.com/550x300?text=Schulprojekt+1"
+                        alt="Schulprojekt 1">
+                    <div class="project-content">
+                        <span class="project-badge school" data-i18n="projects.badge.school">Schule</span>
+                        <h4 data-i18n="projects.school1.title">Schulprojekt 1</h4>
+                        <p data-i18n="projects.school1.desc">Beschreibung des Schulprojekts 1</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">C++</span>
+                            <span class="tech-tag">Python</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img class="project-image" src="https://via.placeholder.com/550x300?text=Schulprojekt+2"
+                        alt="Schulprojekt 2">
+                    <div class="project-content">
+                        <span class="project-badge school" data-i18n="projects.badge.school">Schule</span>
+                        <h4 data-i18n="projects.school2.title">Schulprojekt 2</h4>
+                        <p data-i18n="projects.school2.desc">Beschreibung des Schulprojekts 2</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">SQL</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img class="project-image" src="https://via.placeholder.com/550x300?text=Schulprojekt+3"
+                        alt="Schulprojekt 3">
+                    <div class="project-content">
+                        <span class="project-badge school" data-i18n="projects.badge.school">Schule</span>
+                        <h4 data-i18n="projects.school3.title">Schulprojekt 3</h4>
+                        <p data-i18n="projects.school3.desc">Beschreibung des Schulprojekts 3</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Lua</span>
+                            <span class="tech-tag">C#</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="projects-category">
+            <h3 class="category-title" data-i18n="projects.personal">Eigene Projekte</h3>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img class="project-image" src="https://via.placeholder.com/550x300?text=Eigenes+Projekt+1"
+                        alt="Eigenes Projekt 1">
+                    <div class="project-content">
+                        <span class="project-badge personal" data-i18n="projects.badge.personal">Privat</span>
+                        <h4 data-i18n="projects.personal1.title">Eigenes Projekt 1</h4>
+                        <p data-i18n="projects.personal1.desc">Beschreibung des eigenen Projekts 1</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img class="project-image" src="https://via.placeholder.com/550x300?text=Eigenes+Projekt+2"
+                        alt="Eigenes Projekt 2">
+                    <div class="project-content">
+                        <span class="project-badge personal" data-i18n="projects.badge.personal">Privat</span>
+                        <h4 data-i18n="projects.personal2.title">Eigenes Projekt 2</h4>
+                        <p data-i18n="projects.personal2.desc">Beschreibung des eigenen Projekts 2</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">React</span>
+                            <span class="tech-tag">Node.js</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img class="project-image" src="images/index/moon-icon.svg" alt="Eigenes Projekt 3">
+                    <div class="project-content">
+                        <span class="project-badge personal" data-i18n="projects.badge.personal">Privat</span>
+                        <h4 data-i18n="projects.personal3.title">Eigenes Projekt 3</h4>
+                        <p data-i18n="projects.personal3.desc">Beschreibung des eigenen Projekts 3</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">Django</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="contact" id="contact">
+        <div class="contact-form-box">
+            <div class="contact-form-inner">
+                <p class="section-title" data-i18n="contact.title">Kontakt</p>
+                <form class="contact-form">
+                    <p class="contact-subtitle" data-i18n="contact.subtitle">Get in Touch</p>
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Name"
+                            data-i18n-placeholder="contact.form.name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Email"
+                            data-i18n-placeholder="contact.form.email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="subject" name="subject" placeholder="Betreff"
+                            data-i18n-placeholder="contact.form.subject" required>
+                    </div>
+                    <button type="submit" class="submit-btn" data-i18n="contact.button">Senden</button>
+                    <div class="contact-info">
+                        <p class="contact-label" data-i18n="contact.connect">Lets Connect</p>
+                        <p class="contact-email">Leonidasflaounas@gmail.com</p>
+                        <a href="https://github.com/BieneAxt" target="_blank" class="github-btn">
+                            <img src="images/index/Github-Icon.png" alt="GitHub" class="github-icon">
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <script>
+        // Translation Dictionary
+        const translations = {
+            de: {
+                'nav.home': 'Startseite',
+                'nav.projects': 'Projekte',
+                'nav.contact': 'Kontakt',
+                'hero.description': 'Willkommen auf meinem Portfolio! Hier präsentiere ich meine Coding-Projekte aus Leidenschaft und Schule.',
+                'hero.button': 'Projekte Ansehen',
+                'projects.title': 'Projekte',
+                'projects.school': 'Schulprojekte',
+                'projects.personal': 'Eigene Projekte',
+                'projects.badge.school': 'Schule',
+                'projects.badge.personal': 'Privat',
+                'projects.school1.title': 'Schulprojekt 1',
+                'projects.school1.desc': 'Beschreibung des Schulprojekts 1',
+                'projects.school2.title': 'Schulprojekt 2',
+                'projects.school2.desc': 'Beschreibung des Schulprojekts 2',
+                'projects.school3.title': 'Schulprojekt 3',
+                'projects.school3.desc': 'Beschreibung des Schulprojekts 3',
+                'projects.personal1.title': 'Eigenes Projekt 1',
+                'projects.personal1.desc': 'Beschreibung des eigenen Projekts 1',
+                'projects.personal2.title': 'Eigenes Projekt 2',
+                'projects.personal2.desc': 'Beschreibung des eigenen Projekts 2',
+                'projects.personal3.title': 'Eigenes Projekt 3',
+                'projects.personal3.desc': 'Beschreibung des eigenen Projekts 3',
+                'contact.title': 'Kontakt',
+                'contact.subtitle': 'Schreib mir eine Nachricht',
+                'contact.form.name': 'Name',
+                'contact.form.email': 'E-Mail',
+                'contact.form.subject': 'Betreff',
+                'contact.button': 'Senden',
+                'contact.connect': 'Kontaktiere mich'
+            },
+            en: {
+                'nav.home': 'Home',
+                'nav.projects': 'Projects',
+                'nav.contact': 'Contact',
+                'hero.description': 'Welcome to my portfolio! Here I showcase my coding projects from passion and school.',
+                'hero.button': 'View Projects',
+                'projects.title': 'Projects',
+                'projects.school': 'School Projects',
+                'projects.personal': 'Personal Projects',
+                'projects.badge.school': 'School',
+                'projects.badge.personal': 'Personal',
+                'projects.school1.title': 'School Project 1',
+                'projects.school1.desc': 'Description of school project 1',
+                'projects.school2.title': 'School Project 2',
+                'projects.school2.desc': 'Description of school project 2',
+                'projects.school3.title': 'School Project 3',
+                'projects.school3.desc': 'Description of school project 3',
+                'projects.personal1.title': 'Personal Project 1',
+                'projects.personal1.desc': 'Description of personal project 1',
+                'projects.personal2.title': 'Personal Project 2',
+                'projects.personal2.desc': 'Description of personal project 2',
+                'projects.personal3.title': 'Personal Project 3',
+                'projects.personal3.desc': 'Description of personal project 3',
+                'contact.title': 'Contact',
+                'contact.subtitle': 'Get in Touch',
+                'contact.form.name': 'Name',
+                'contact.form.email': 'Email',
+                'contact.form.subject': 'Subject',
+                'contact.button': 'Send',
+                'contact.connect': 'Let\'s Connect'
+            }
+        };
+
+        // Translate function
+        function translatePage(lang) {
+            // Translate text content
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                el.textContent = translations[lang][key] || key;
+            });
+
+            // Translate placeholders
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-i18n-placeholder');
+                el.placeholder = translations[lang][key] || key;
+            });
+        }
+
+        (function () {
+            const toggle = document.getElementById('themeToggle');
+            const html = document.documentElement;
+            const iconDark = toggle.querySelector('.icon-dark');
+            const iconLight = toggle.querySelector('.icon-light');
+
+            if (!toggle) return; // safety
+
+            // apply saved theme or default to dark
+            const saved = localStorage.getItem('theme');
+            const theme = saved === 'light' ? 'light' : 'dark';
+            html.classList.add(theme);
+            updateIcons(theme);
+
+            toggle.addEventListener('click', () => {
+                const isDark = html.classList.contains('dark');
+                html.classList.toggle('dark', !isDark);
+                html.classList.toggle('light', isDark);
+                const newTheme = isDark ? 'light' : 'dark';
+                localStorage.setItem('theme', newTheme);
+                updateIcons(newTheme);
+            });
+
+            function updateIcons(theme) {
+                if (theme === 'dark') {
+                    iconDark.style.display = 'block';
+                    iconLight.style.display = 'none';
+                } else {
+                    iconDark.style.display = 'none';
+                    iconLight.style.display = 'block';
+                }
+            }
+        })();
+
+        // Language Toggle
+        (function () {
+            const langToggle = document.getElementById('langToggle');
+            const savedLang = localStorage.getItem('language') || 'de';
+
+            // Set initial state
+            updateLangButton(savedLang);
+            translatePage(savedLang);
+
+            langToggle.addEventListener('click', () => {
+                const currentLang = localStorage.getItem('language') || 'de';
+                const newLang = currentLang === 'de' ? 'en' : 'de';
+                localStorage.setItem('language', newLang);
+                updateLangButton(newLang);
+                translatePage(newLang);
+            });
+
+            function updateLangButton(lang) {
+                langToggle.textContent = lang === 'de' ? 'DE' : 'EN';
+                langToggle.classList.toggle('active', lang === 'en');
+            }
+        })();
+    </script>
+
+</body>
+
+</html>
