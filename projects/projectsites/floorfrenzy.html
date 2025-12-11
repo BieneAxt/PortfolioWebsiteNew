@@ -9,11 +9,12 @@
     <style>
         body {
             padding-top: 50px;
+            padding-bottom: 5px;
         }
 
         .project-detail {
             max-width: 700px;
-            margin: 60px auto;
+            margin: 60px auto 10px auto;
             padding: 0 20px;
         }
 
@@ -39,11 +40,17 @@
         .content-box {
             max-width: 700px;
             margin: 40px auto;
-            padding: 30px;
-            background: #ffffff;
-            border: none;
-            border-radius: 20px;
+            padding: 10px 10px 30px 10px;
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-radius: 30px;
             backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            overflow: hidden;
+        }
+
+        .content-box:last-of-type {
+            margin-bottom: 100px;
         }
 
         .cover-image {
@@ -51,7 +58,7 @@
             height: 400px;
             object-fit: cover;
             display: block;
-            border-radius: 8px;
+            border-radius: 30px;
             margin-bottom: 20px;
         }
 
@@ -68,6 +75,41 @@
             color: #333;
         }
 
+        .cover-content-inner {
+            background: linear-gradient(45deg, #1f1f1f 0%, #2a2a2a 25%, #1f1f1f 50%, #2a2a2a 75%, #1f1f1f 100%);
+            padding: 50px;
+            border-radius: 30px;
+            margin-top: 0;
+            border: none;
+            width: 100%;
+            height: auto;
+        }
+
+        .cover-content-inner h2 {
+            color: #ffffff;
+        }
+
+        .cover-content-inner p {
+            color: #e0e0e0;
+        }
+
+        html.light .content-box {
+            background: rgba(255, 255, 255, 0.5);
+            border-color: rgba(200, 200, 200, 0.4);
+        }
+
+        html.light .cover-content-inner {
+            background: linear-gradient(45deg, #f5f5f5 0%, #e8e8e8 25%, #f5f5f5 50%, #e8e8e8 75%, #f5f5f5 100%);
+        }
+
+        html.light .cover-content-inner h2 {
+            color: #333;
+        }
+
+        html.light .cover-content-inner p {
+            color: #333;
+        }
+
         .content-section {
             margin-bottom: 40px;
         }
@@ -79,14 +121,14 @@
         .image-container {
             max-width: 100%;
             margin: 0 0 20px 0;
-            border-radius: 8px;
+            border-radius: 30px;
             overflow: hidden;
         }
 
         .feature-box {
             background: #e8e8e8;
             border: none;
-            border-radius: 12px;
+            border-radius: 30px;
             padding: 15px 20px;
             display: flex;
             gap: 20px;
@@ -104,7 +146,7 @@
             width: 280px;
             height: 210px;
             margin: 0;
-            border-radius: 8px;
+            border-radius: 30px;
             overflow: hidden;
         }
 
@@ -273,8 +315,8 @@
         }
 
         html.dark .feature-box {
-            background: rgba(255, 255, 255, 0.1);
-            border-color: rgba(255, 255, 255, 0.2);
+            background: linear-gradient(45deg, #1f1f1f 0%, #2a2a2a 25%, #1f1f1f 50%, #2a2a2a 75%, #1f1f1f 100%);
+            border: none;
         }
 
         html.dark .feature-box h3 {
@@ -311,7 +353,7 @@
             <div class="logo">LF</div>
             <div class="nav-container">
                 <div class="nav-item">
-                    <a href="../../#hero" class="nav-btn nav-link" data-i18n="nav.home">Home</a>
+                    <a href="../../index.html" class="nav-btn nav-link" data-i18n="nav.home">Home</a>
                 </div>
                 <div class="nav-item">
                     <a href="../../#projects" class="nav-btn nav-link" data-i18n="nav.projects">Projects</a>
@@ -338,14 +380,17 @@
         <div class="content-box cover-box">
             <img src="../../images/projects/eigeneprojekte/FloorFrenzy/FloorFrenzy.png" alt="Floor Frenzy"
                 class="cover-image">
-            <div class="cover-content">
-                <h2 data-i18n="projects.floorfrenzy.title">Floor Frenzy</h2>
-                <p data-i18n="projects.floorfrenzy.overview">
-                    Floor Frenzy ist ein selbst entwickeltes Multiplayer-Spiel auf Roblox. Die Spieler versuchen auf
-                    einer
-                    zerfallenden Plattform so lange wie möglich zu überleben. Das Spiel enthält mehrere Gamemodes, einen
-                    Item-Shop, ein Skin- und Color-System, sowie ein umfangreiches DataStore-Management.
-                </p>
+            <div class="cover-content-inner">
+                <div class="cover-content">
+                    <h2 data-i18n="projects.floorfrenzy.title">Floor Frenzy</h2>
+                    <p data-i18n="projects.floorfrenzy.overview">
+                        Floor Frenzy ist ein selbst entwickeltes Multiplayer-Spiel auf Roblox. Die Spieler versuchen auf
+                        einer
+                        zerfallenden Plattform so lange wie möglich zu überleben. Das Spiel enthält mehrere Gamemodes,
+                        einen
+                        Item-Shop, ein Skin- und Color-System, sowie ein umfangreiches DataStore-Management.
+                    </p>
+                </div>
             </div>
         </div>
         <div class="content-box">

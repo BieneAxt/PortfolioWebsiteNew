@@ -29,63 +29,18 @@
         }
 
         .projects-category {
-            animation: slideDownFade 0.8s ease-out;
-            animation-delay: 0.3s;
+            opacity: 1;
+            transition: opacity 0.3s ease-out;
+        }
+
+        .projects-category.hidden {
+            display: none;
+            opacity: 0;
         }
 
         .contact {
             animation: slideDownFade 0.8s ease-out;
             animation-delay: 0.4s;
-        }
-
-        @keyframes blobMove {
-            0%, 100% {
-                transform: translate(0, 0);
-            }
-            25% {
-                transform: translate(30px, -50px);
-            }
-            50% {
-                transform: translate(-20px, 20px);
-            }
-            75% {
-                transform: translate(50px, 10px);
-            }
-        }
-
-        .hero-blob {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(40px);
-            opacity: 0.3;
-            mix-blend-mode: screen;
-            animation: blobMove 8s infinite ease-in-out;
-        }
-
-        .hero-blob-1 {
-            width: 300px;
-            height: 300px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            top: 10%;
-            left: 10%;
-        }
-
-        .hero-blob-2 {
-            width: 250px;
-            height: 250px;
-            background: linear-gradient(135deg, #764ba2, #f093fb);
-            bottom: 20%;
-            right: 15%;
-            animation-delay: 1s;
-        }
-
-        .hero-blob-3 {
-            width: 200px;
-            height: 200px;
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
-            top: 50%;
-            right: 10%;
-            animation-delay: 2s;
         }
     </style>
 </head>
@@ -116,11 +71,6 @@
     </header>
 
     <section class="hero" id="hero">
-        <div class="hero-background">
-            <div class="hero-blob hero-blob-1"></div>
-            <div class="hero-blob hero-blob-2"></div>
-            <div class="hero-blob hero-blob-3"></div>
-        </div>
         <div class="hero-content">
             <h1>Leonidas Flaounas</h1>
             <p data-i18n="hero.description">Willkommen auf meinem Portfolio! Hier präsentiere ich meine Coding-Projekte
@@ -133,7 +83,12 @@
     <section class="projects" id="projects">
         <p class="section-title" data-i18n="projects.title">Projekte</p>
 
-        <div class="projects-category">
+        <div class="project-filter-tag">
+            <button class="filter-btn" data-i18n="projects.school">Schulprojekte</button>
+            <button class="filter-btn active" data-i18n="projects.personal">Eigene Projekte</button>
+        </div>
+
+        <div class="projects-category hidden">
             <h3 class="category-title" data-i18n="projects.school">Schulprojekte</h3>
             <div class="projects-grid">
                 <div class="project-card-wrapper">
@@ -368,6 +323,29 @@
                     iconLight.style.display = 'block';
                 }
             }
+        })();
+
+        // Project Filter
+        (function () {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const categories = document.querySelectorAll('.projects-category');
+
+            filterBtns.forEach((btn, index) => {
+                btn.addEventListener('click', () => {
+                    // Update active button
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    // Show/hide categories
+                    categories.forEach((cat, catIndex) => {
+                        if (catIndex === index) {
+                            cat.classList.remove('hidden');
+                        } else {
+                            cat.classList.add('hidden');
+                        }
+                    });
+                });
+            });
         })();
 
         // Language Toggle
