@@ -24,11 +24,60 @@ body {
     justify-content: center;
     padding: 20px;
     margin-top: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+.hero-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(40px);
+    opacity: 0.3;
+    mix-blend-mode: screen;
+    animation: blobMove 8s infinite ease-in-out;
+}
+
+.hero-blob-1 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    top: 10%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.hero-blob-2 {
+    width: 250px;
+    height: 250px;
+    background: linear-gradient(135deg, #764ba2, #f093fb);
+    bottom: 20%;
+    right: 15%;
+    animation-delay: 1s;
+}
+
+.hero-blob-3 {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    top: 50%;
+    right: 10%;
+    animation-delay: 2s;
 }
 
 .hero-content {
     text-align: center;
     max-width: 800px;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content h1 {
@@ -278,20 +327,26 @@ nav {
 
 .nav-btn {
     color: #cccccc;
-    border: none;
-    padding: 6px 15px;
+    border: 2px solid transparent;
+    padding: 8px 18px;
     font-size: 16px;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
     background-color: transparent;
     display: flex;
     align-items: center;
-    font-weight: normal;
+    font-weight: 500;
     text-decoration: none;
+    border-radius: 8px;
+    position: relative;
 }
 
 .nav-btn:hover {
     color: white;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%);
+    border-color: rgba(102, 126, 234, 0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
 }
 
 .nav-link {
@@ -435,6 +490,9 @@ html.dark .nav-btn {
 
 html.dark .nav-btn:hover {
     color: white;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.4) 0%, rgba(118, 75, 162, 0.4) 100%);
+    border-color: rgba(102, 126, 234, 0.6);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
 }
 
 html.dark .dropdown {
@@ -493,6 +551,9 @@ html.light .nav-btn {
 
 html.light .nav-btn:hover {
     color: #000;
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.15) 100%);
+    border-color: rgba(102, 126, 234, 0.4);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
 }
 
 html.light .dropdown {
