@@ -40,7 +40,7 @@
         .content-box {
             max-width: 700px;
             margin: 40px auto;
-            padding: 10px 10px 30px 10px;
+            padding: 10px 10px 10px 10px;
             background: rgba(255, 255, 255, 0.15);
             border: 1px solid rgba(255, 255, 255, 0.25);
             border-radius: 30px;
@@ -129,7 +129,7 @@
             background: #e8e8e8;
             border: none;
             border-radius: 30px;
-            padding: 15px 20px;
+            padding: 15px 10px;
             display: flex;
             gap: 20px;
             align-items: flex-start;
@@ -350,24 +350,26 @@
 <body>
     <header>
         <nav>
-            <div class="logo">LF</div>
-            <div class="nav-container">
-                <div class="nav-item">
-                    <a href="../../index.html" class="nav-btn nav-link" data-i18n="nav.home">Home</a>
+            <div class="nav-inner">
+                <div class="logo">LF</div>
+                <div class="nav-container">
+                    <div class="nav-item">
+                        <a href="../../index.html" class="nav-btn nav-link" data-i18n="nav.home">Home</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="../../#projects" class="nav-btn nav-link" data-i18n="nav.projects">Projects</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="../../#contact" class="nav-btn nav-link" data-i18n="nav.contact">Contact</a>
+                    </div>
                 </div>
-                <div class="nav-item">
-                    <a href="../../#projects" class="nav-btn nav-link" data-i18n="nav.projects">Projects</a>
+                <div class="toggle-group">
+                    <button class="lang-toggle" id="langToggle">EN</button>
+                    <button class="theme-toggle" id="themeToggle">
+                        <img class="icon-dark" src="../../images/index/moon-icon.svg" alt="Dark Mode">
+                        <img class="icon-light" src="../../images/index/sun-icon.svg" alt="Light Mode">
+                    </button>
                 </div>
-                <div class="nav-item">
-                    <a href="../../#contact" class="nav-btn nav-link" data-i18n="nav.contact">Contact</a>
-                </div>
-            </div>
-            <div class="toggle-group">
-                <button class="lang-toggle" id="langToggle">EN</button>
-                <button class="theme-toggle" id="themeToggle">
-                    <img class="icon-dark" src="../../images/index/moon-icon.svg" alt="Dark Mode">
-                    <img class="icon-light" src="../../images/index/sun-icon.svg" alt="Light Mode">
-                </button>
             </div>
         </nav>
     </header>
