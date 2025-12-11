@@ -103,16 +103,35 @@ body {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, 300px);
     gap: 30px;
+    max-width: 100%;
+    justify-content: center;
+}
+
+.project-card-wrapper {
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: all 0.3s;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.project-card-wrapper:hover {
+    transform: scale(1.05) translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .project-card {
     padding: 0;
     border-radius: 8px;
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(45deg, #1f1f1f 0%, #2a2a2a 25%, #1f1f1f 50%, #2a2a2a 75%, #1f1f1f 100%);
+    border: none;
     transition: all 0.3s;
+    width: 100%;
+    max-width: none;
     overflow: hidden;
 }
 
@@ -128,9 +147,16 @@ body {
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.02);
+    background: linear-gradient(45deg, #1f1f1f 0%, #2a2a2a 25%, #1f1f1f 50%, #2a2a2a 75%, #1f1f1f 100%);
+    border: none;
+}
+
+.project-card-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    display: block;
 }
 
 .project-card h3 {
@@ -423,14 +449,20 @@ html.dark .dropdown a:hover {
     background-color: #555;
 }
 
+html.dark .project-card-wrapper {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
 html.dark .project-card {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(45deg, #1f1f1f 0%, #2a2a2a 25%, #1f1f1f 50%, #2a2a2a 75%, #1f1f1f 100%);
+    border: none;
+    color: #ffffff;
 }
 
 html.dark .project-card:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.2);
+    background: linear-gradient(45deg, #1f1f1f 0%, #2a2a2a 25%, #1f1f1f 50%, #2a2a2a 75%, #1f1f1f 100%);
+    border: none;
 }
 
 /* Light Mode */
@@ -476,14 +508,20 @@ html.light .dropdown a:hover {
     background-color: #e0e0e0;
 }
 
-html.light .project-card {
-    background: rgba(0, 0, 0, 0.05);
+html.light .project-card-wrapper {
+    background: rgba(255, 255, 255, 0.5);
     border-color: rgba(0, 0, 0, 0.1);
 }
 
+html.light .project-card {
+    background: linear-gradient(45deg, #d8d8d8 0%, #c8c8c8 25%, #d8d8d8 50%, #c8c8c8 75%, #d8d8d8 100%);
+    border: none;
+    color: #333;
+}
+
 html.light .project-card:hover {
-    background: rgba(0, 0, 0, 0.1);
-    border-color: rgba(0, 0, 0, 0.2);
+    background: linear-gradient(45deg, #d8d8d8 0%, #c8c8c8 25%, #d8d8d8 50%, #c8c8c8 75%, #d8d8d8 100%);
+    border: none;
 }
 
 html.light .cta-button {
@@ -708,13 +746,13 @@ html.light .github-btn:hover {
     background: linear-gradient(45deg, #1f1f1f 0%, #2a2a2a 25%, #1f1f1f 50%, #2a2a2a 75%, #1f1f1f 100%);
     border: none;
     border-radius: 30px;
-    padding: 60px;
+    padding: 50px;
 }
 
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 14px;
 }
 
 .form-group {
@@ -723,8 +761,8 @@ html.light .github-btn:hover {
 }
 
 .form-group input {
-    padding: 20px 22px;
-    font-size: 16px;
+    padding: 16px 18px;
+    font-size: 15px;
     border: none;
     border-radius: 25px;
     background-color: #d0d0d0;

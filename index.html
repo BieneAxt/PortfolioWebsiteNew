@@ -6,6 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="index.css">
+    <style>
+        @keyframes slideDownFade {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero {
+            animation: slideDownFade 0.8s ease-out;
+        }
+
+        .projects {
+            animation: slideDownFade 0.8s ease-out;
+            animation-delay: 0.2s;
+        }
+
+        .projects-category {
+            animation: slideDownFade 0.8s ease-out;
+            animation-delay: 0.3s;
+        }
+
+        .contact {
+            animation: slideDownFade 0.8s ease-out;
+            animation-delay: 0.4s;
+        }
+    </style>
 </head>
 
 <body>
@@ -43,48 +75,176 @@
         </div>
     </section>
 
+    <section class="about" id="about">
+        <div class="about-content">
+            <h2 data-i18n="about.title">Über Mich</h2>
+            <p data-i18n="about.description">Ich bin ein leidenschaftlicher Entwickler mit Erfahrung in Web- und Spieleentwicklung. Meine Reise in der Informatik begann in der Schule und hat sich zu einer echten Passion entwickelt. Ich liebe es, innovative Projekte zu schaffen und dabei neue Technologien zu erkunden.</p>
+            <div class="about-highlights">
+                <div class="highlight-item">
+                    <h3 data-i18n="about.highlight1.title">Kreativ</h3>
+                    <p data-i18n="about.highlight1.desc">Innovative Lösungen und einzigartige Ideen</p>
+                </div>
+                <div class="highlight-item">
+                    <h3 data-i18n="about.highlight2.title">Zuverlässig</h3>
+                    <p data-i18n="about.highlight2.desc">Hochwertige Code-Standards und Dokumentation</p>
+                </div>
+                <div class="highlight-item">
+                    <h3 data-i18n="about.highlight3.title">Lernwillig</h3>
+                    <p data-i18n="about.highlight3.desc">Ständig neue Technologien und Best Practices entdecken</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <p class="section-title" data-i18n="skills.title">Fähigkeiten</p>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3 data-i18n="skills.frontend">Frontend</h3>
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span>HTML/CSS</span>
+                        <span class="skill-percent">90%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span>JavaScript</span>
+                        <span class="skill-percent">85%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span>React</span>
+                        <span class="skill-percent">75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3 data-i18n="skills.backend">Backend</h3>
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span>Node.js</span>
+                        <span class="skill-percent">80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span>Python</span>
+                        <span class="skill-percent">82%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 82%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span>SQL/Datenbanken</span>
+                        <span class="skill-percent">78%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 78%"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3 data-i18n="skills.gamedev">Spieleentwicklung</h3>
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span>Lua/LÖVE 2D</span>
+                        <span class="skill-percent">88%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 88%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span>C++</span>
+                        <span class="skill-percent">75%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span>Game Design</span>
+                        <span class="skill-percent">80%</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-progress" style="width: 80%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="projects" id="projects">
         <p class="section-title" data-i18n="projects.title">Projekte</p>
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all" data-i18n="projects.filter.all">Alle</button>
+            <button class="filter-btn" data-filter="school" data-i18n="projects.filter.school">Schule</button>
+            <button class="filter-btn" data-filter="personal" data-i18n="projects.filter.personal">Privat</button>
+        </div>
 
         <div class="projects-category">
             <h3 class="category-title" data-i18n="projects.school">Schulprojekte</h3>
             <div class="projects-grid">
-                <div class="project-card">
-                    <img class="project-image" src="https://via.placeholder.com/550x300?text=Schulprojekt+1"
-                        alt="Schulprojekt 1">
-                    <div class="project-content">
-                        <span class="project-badge school" data-i18n="projects.badge.school">Schule</span>
-                        <h4 data-i18n="projects.school1.title">Schulprojekt 1</h4>
-                        <p data-i18n="projects.school1.desc">Beschreibung des Schulprojekts 1</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">C++</span>
-                            <span class="tech-tag">Python</span>
+                <div class="project-card-wrapper">
+                    <div class="project-card">
+                        <img class="project-image" src="https://via.placeholder.com/550x300?text=Schulprojekt+1"
+                            alt="Schulprojekt 1">
+                        <div class="project-content">
+                            <span class="project-badge school" data-i18n="projects.badge.school">Schule</span>
+                            <h4 data-i18n="projects.school1.title">Schulprojekt 1</h4>
+                            <p data-i18n="projects.school1.desc">Beschreibung des Schulprojekts 1</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">C++</span>
+                                <span class="tech-tag">Python</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <img class="project-image" src="https://via.placeholder.com/550x300?text=Schulprojekt+2"
-                        alt="Schulprojekt 2">
-                    <div class="project-content">
-                        <span class="project-badge school" data-i18n="projects.badge.school">Schule</span>
-                        <h4 data-i18n="projects.school2.title">Schulprojekt 2</h4>
-                        <p data-i18n="projects.school2.desc">Beschreibung des Schulprojekts 2</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Java</span>
-                            <span class="tech-tag">SQL</span>
+                <div class="project-card-wrapper">
+                    <div class="project-card">
+                        <img class="project-image" src="https://via.placeholder.com/550x300?text=Schulprojekt+2"
+                            alt="Schulprojekt 2">
+                        <div class="project-content">
+                            <span class="project-badge school" data-i18n="projects.badge.school">Schule</span>
+                            <h4 data-i18n="projects.school2.title">Schulprojekt 2</h4>
+                            <p data-i18n="projects.school2.desc">Beschreibung des Schulprojekts 2</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">SQL</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <img class="project-image" src="https://via.placeholder.com/550x300?text=Schulprojekt+3"
-                        alt="Schulprojekt 3">
-                    <div class="project-content">
-                        <span class="project-badge school" data-i18n="projects.badge.school">Schule</span>
-                        <h4 data-i18n="projects.school3.title">Schulprojekt 3</h4>
-                        <p data-i18n="projects.school3.desc">Beschreibung des Schulprojekts 3</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Lua</span>
-                            <span class="tech-tag">C#</span>
+                <div class="project-card-wrapper">
+                    <div class="project-card">
+                        <img class="project-image" src="https://via.placeholder.com/550x300?text=Schulprojekt+3"
+                            alt="Schulprojekt 3">
+                        <div class="project-content">
+                            <span class="project-badge school" data-i18n="projects.badge.school">Schule</span>
+                            <h4 data-i18n="projects.school3.title">Schulprojekt 3</h4>
+                            <p data-i18n="projects.school3.desc">Beschreibung des Schulprojekts 3</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">Lua</span>
+                                <span class="tech-tag">C#</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -94,45 +254,40 @@
         <div class="projects-category">
             <h3 class="category-title" data-i18n="projects.personal">Eigene Projekte</h3>
             <div class="projects-grid">
-                <div class="project-card">
-                    <img class="project-image" src="https://via.placeholder.com/550x300?text=Eigenes+Projekt+1"
-                        alt="Eigenes Projekt 1">
-                    <div class="project-content">
-                        <span class="project-badge personal" data-i18n="projects.badge.personal">Privat</span>
-                        <h4 data-i18n="projects.personal1.title">Eigenes Projekt 1</h4>
-                        <p data-i18n="projects.personal1.desc">Beschreibung des eigenen Projekts 1</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
+                <div class="project-card-wrapper">
+                    <a href="projects/projectsites/floorfrenzy.html" class="project-card-link">
+                        <div class="project-card">
+                            <img class="project-image" src="images/projects/eigeneprojekte/FloorFrenzy/FloorFrenzy.png"
+                                alt="Eigenes Projekt 1">
+                            <div class="project-content">
+                                <span class="project-badge personal" data-i18n="projects.badge.personal">Privat</span>
+                                <h4 data-i18n="projects.personal1.title">Eigenes Projekt 1</h4>
+                                <p data-i18n="projects.personal1.desc">Beschreibung des eigenen Projekts 1</p>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">HTML</span>
+                                    <span class="tech-tag">CSS</span>
+                                    <span class="tech-tag">JavaScript</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="project-card-wrapper">
+                    <div class="project-card">
+                        <img class="project-image" src="images/projects/eigeneprojekte/ChristmasTowerIcon.png"
+                            alt="Eigenes Projekt 2">
+                        <div class="project-content">
+                            <span class="project-badge personal" data-i18n="projects.badge.personal">Privat</span>
+                            <h4 data-i18n="projects.personal2.title">Eigenes Projekt 2</h4>
+                            <p data-i18n="projects.personal2.desc">Beschreibung des eigenen Projekts 2</p>
+                            <div class="tech-tags">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="project-card">
-                    <img class="project-image" src="https://via.placeholder.com/550x300?text=Eigenes+Projekt+2"
-                        alt="Eigenes Projekt 2">
-                    <div class="project-content">
-                        <span class="project-badge personal" data-i18n="projects.badge.personal">Privat</span>
-                        <h4 data-i18n="projects.personal2.title">Eigenes Projekt 2</h4>
-                        <p data-i18n="projects.personal2.desc">Beschreibung des eigenen Projekts 2</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">React</span>
-                            <span class="tech-tag">Node.js</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img class="project-image" src="images/index/moon-icon.svg" alt="Eigenes Projekt 3">
-                    <div class="project-content">
-                        <span class="project-badge personal" data-i18n="projects.badge.personal">Privat</span>
-                        <h4 data-i18n="projects.personal3.title">Eigenes Projekt 3</h4>
-                        <p data-i18n="projects.personal3.desc">Beschreibung des eigenen Projekts 3</p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Django</span>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
     </section>
