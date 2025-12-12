@@ -260,7 +260,7 @@ header {
 
 nav {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     justify-content: space-between;
     align-items: center;
     width: 33%;
@@ -268,7 +268,7 @@ nav {
     background: rgba(24, 24, 27, 0.5);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
-    padding: 3px 3px;
+    padding: 4px 4px;
     border-radius: 40px;
     flex-wrap: wrap;
     border: none;
@@ -276,13 +276,13 @@ nav {
 
 .nav-inner {
     display: flex;
-    gap: 12px;
+    gap: 10px;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     height: auto;
     background: rgba(18, 18, 22, 0.6);
-    padding: 8px 16px;
+    padding: 6px 14px;
     border-radius: 35px;
     margin: 0;
 }
@@ -818,7 +818,7 @@ html.light .github-btn:hover {
     background: linear-gradient(45deg, #0f0f0f 0%, #1a1a1a 25%, #0f0f0f 50%, #1a1a1a 75%, #0f0f0f 100%);
     border: none;
     border-radius: 30px;
-    padding: 50px;
+    padding: 35px;
 }
 
 .contact-form {
