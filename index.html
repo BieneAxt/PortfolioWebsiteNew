@@ -7,6 +7,7 @@
     <title>Portfolio</title>
     <link rel="icon" href="images/index/Favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="index.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/index.min.js"></script>
     <style>
         @keyframes slideDownFade {
             from {
@@ -199,21 +200,26 @@
         <div class="contact-form-box">
             <div class="contact-form-inner">
                 <p class="section-title" data-i18n="contact.title">Kontakt</p>
-                <form class="contact-form">
+                <form class="contact-form" id="contactForm">
                     <p class="contact-subtitle" data-i18n="contact.subtitle">Get in Touch</p>
                     <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder="Name"
+                        <input type="text" id="name" name="from_name" placeholder="Name"
                             data-i18n-placeholder="contact.form.name" required>
                     </div>
                     <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Email"
+                        <input type="email" id="email" name="from_email" placeholder="Email"
                             data-i18n-placeholder="contact.form.email" required>
                     </div>
                     <div class="form-group">
                         <input type="text" id="subject" name="subject" placeholder="Betreff"
                             data-i18n-placeholder="contact.form.subject" required>
                     </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Nachricht"
+                            data-i18n-placeholder="contact.form.message" rows="5" required></textarea>
+                    </div>
                     <button type="submit" class="submit-btn" data-i18n="contact.button">Senden</button>
+                    <div id="formMessage" style="margin-top: 15px; text-align: center; display: none;"></div>
                     <div class="contact-info">
                         <p class="contact-label" data-i18n="contact.connect">Lets Connect</p>
                         <p class="contact-email">Leonidasflaounas@gmail.com</p>
@@ -225,6 +231,7 @@
             </div>
         </div>
     </section>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/index.min.js"></script>
     <script>
         // Translation Dictionary
         const translations = {
@@ -256,6 +263,7 @@
                 'contact.form.name': 'Name',
                 'contact.form.email': 'E-Mail',
                 'contact.form.subject': 'Betreff',
+                'contact.form.message': 'Nachricht',
                 'contact.button': 'Senden',
                 'contact.connect': 'Kontaktiere mich'
             },
@@ -286,6 +294,7 @@
                 'contact.subtitle': 'Get in Touch',
                 'contact.form.name': 'Name',
                 'contact.form.email': 'Email',
+                'contact.form.message': 'Message',
                 'contact.form.subject': 'Subject',
                 'contact.button': 'Send',
                 'contact.connect': 'Let\'s Connect'
@@ -384,6 +393,45 @@
             function updateLangButton(lang) {
                 langToggle.textContent = lang === 'de' ? 'DE' : 'EN';
                 langToggle.classList.toggle('active', lang === 'en');
+            }
+        })();
+
+        // EmailJS Form Handler
+        (function () {
+            emailjs.init('leLpSwa5eszwgODy_');
+
+            const contactForm = document.getElementById('contactForm');
+            const formMessage = document.getElementById('formMessage');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    const submitBtn = contactForm.querySelector('.submit-btn');
+                    const originalText = submitBtn.textContent;
+                    submitBtn.textContent = 'Wird gesendet...';
+                    submitBtn.disabled = true;
+
+                    emailjs.sendForm('service_wx0l1b5', 'template_990emu3', contactForm)
+                        .then(function () {
+                            formMessage.style.display = 'block';
+                            formMessage.style.color = '#4CAF50';
+                            formMessage.textContent = 'Nachricht erfolgreich versendet! 🎉';
+                            contactForm.reset();
+                            submitBtn.textContent = originalText;
+                            submitBtn.disabled = false;
+
+                            setTimeout(() => {
+                                formMessage.style.display = 'none';
+                            }, 5000);
+                        }, function (error) {
+                            formMessage.style.display = 'block';
+                            formMessage.style.color = '#f44336';
+                            formMessage.textContent = 'Fehler beim Versenden. Bitte versuche es später erneut.';
+                            submitBtn.textContent = originalText;
+                            submitBtn.disabled = false;
+                        });
+                });
             }
         })();
     </script>
