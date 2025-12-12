@@ -260,7 +260,7 @@ header {
 
 nav {
     display: flex;
-    gap: 15px;
+    gap: 10px;
     justify-content: space-between;
     align-items: center;
     width: 33%;
@@ -268,7 +268,7 @@ nav {
     background: rgba(24, 24, 27, 0.5);
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
-    padding: 6px 6px;
+    padding: 3px 3px;
     border-radius: 40px;
     flex-wrap: wrap;
     border: none;
@@ -276,13 +276,13 @@ nav {
 
 .nav-inner {
     display: flex;
-    gap: 15px;
+    gap: 12px;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     height: auto;
     background: rgba(18, 18, 22, 0.6);
-    padding: 12px 20px;
+    padding: 8px 16px;
     border-radius: 35px;
     margin: 0;
 }
